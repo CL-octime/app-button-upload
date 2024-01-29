@@ -1,6 +1,6 @@
 import { Outlet, NavLink, Link } from "react-router-dom";
 
-import github from "../../assets/github.svg";
+import github from "../../assets/timmo.svg";
 
 import styles from "./Layout.module.css";
 
@@ -14,7 +14,7 @@ const Layout = () => {
             <header className={styles.header} role={"banner"}>
                 <div className={styles.headerContainer}>
                     <Link to="/" className={styles.headerTitleContainer}>
-                        <h3 className={styles.headerTitle}>GPT + Enterprise data | Sample</h3>
+                        <h3 className={styles.headerTitle}>Timoo BETA</h3>
                     </Link>
                     <nav>
                         <ul className={styles.headerNavList}>
@@ -29,11 +29,11 @@ const Layout = () => {
                                 </NavLink>
                             </li>
                             <li className={styles.headerNavLeftMargin}>
-                                <a href="https://aka.ms/entgptsearch" target={"_blank"} title="Github repository link">
+                                <a href="www.octime.com" target={"_blank"} title="Octime - Leader en GTA">
                                     <img
                                         src={github}
-                                        alt="Github logo"
-                                        aria-label="Link to github repository"
+                                        alt="Timoo Logo"
+                                        aria-label="Link to Octime"
                                         width="20px"
                                         height="20px"
                                         className={styles.githubLogo}
@@ -42,7 +42,7 @@ const Layout = () => {
                             </li>
                         </ul>
                     </nav>
-                    <h4 className={styles.headerRightText}>Azure OpenAI + AI Search</h4>
+                    <h4 className={styles.headerRightText}>Ton assistant Octime</h4>
                     {useLogin && <LoginButton />}
                 </div>
             </header>
