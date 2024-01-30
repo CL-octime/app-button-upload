@@ -1,6 +1,6 @@
 import { Outlet, NavLink, Link } from "react-router-dom";
 
-import github from "../../assets/timmo.svg";
+import github from "../../assets/Timoo.svg";
 
 import styles from "./Layout.module.css";
 
@@ -30,14 +30,7 @@ const Layout = () => {
                             </li>
                             <li className={styles.headerNavLeftMargin}>
                                 <a href="www.octime.com" target={"_blank"} title="Octime - Leader en GTA">
-                                    <img
-                                        src={github}
-                                        alt="Timoo Logo"
-                                        aria-label="Link to Octime"
-                                        width="20px"
-                                        height="20px"
-                                        className={styles.githubLogo}
-                                    />
+                                    <img src={github} alt="Timoo Logo" aria-label="Link to Octime" width="20px" height="20px" className={styles.githubLogo} />
                                 </a>
                             </li>
                         </ul>
