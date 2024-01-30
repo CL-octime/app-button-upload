@@ -200,6 +200,7 @@ class ChatApproach(Approach, ABC):
         self, messages: list[dict], stream: bool = False, session_state: Any = None, context: dict[str, Any] = {}
     ) -> Union[dict[str, Any], AsyncGenerator[dict[str, Any], None]]:
         overrides = context.get("overrides", {})
+        overrides["suggest_followup_questions"] = True
         auth_claims = context.get("auth_claims", {})
 
         if stream is False:
