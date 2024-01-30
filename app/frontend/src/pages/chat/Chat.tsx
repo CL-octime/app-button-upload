@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Checkbox, Panel, DefaultButton, TextField, SpinButton } from "@fluentui/react";
 import { SparkleFilled } from "@fluentui/react-icons";
 import readNDJSONStream from "ndjson-readablestream";
-
+import github from "../../assets/Timoo.svg";
 import styles from "./Chat.module.css";
 
 import {
@@ -269,7 +269,7 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <img src="../../assets/Timoo.svg" alt="Timoo Logo" aria-label="Link to Octime" width="120px" height="120px" />
+                            <img src={github} alt="Timoo Logo" aria-label="Link to Octime" width="120px" height="120px" />
                             <h1 className={styles.chatEmptyStateTitle}>Parlons Octime</h1>
                             <h2 className={styles.chatEmptyStateSubtitle}>Posez moi une question ou essayez un exemple</h2>
                             <ExampleList onExampleClicked={onExampleClicked} useGPT4V={useGPT4V} />

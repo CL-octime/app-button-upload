@@ -18,6 +18,12 @@ const Layout = () => {
                     </Link>
                     <nav>
                         <ul className={styles.headerNavList}>
+                           
+                        <li className={styles.headerNavLeftMargin}>
+                                <a href="/" target={"_blank"} title="Octime - Leader en GTA">
+                                    <img src={github} alt="Timoo Logo" aria-label="Link to Octime" width="20px" height="20px" className={styles.githubLogo} />
+                                </a>
+                            </li>
                             <li>
                                 <NavLink to="/" className={({ isActive }) => (isActive ? styles.headerNavPageLinkActive : styles.headerNavPageLink)}>
                                     Chat
@@ -29,11 +35,7 @@ const Layout = () => {
                                 </NavLink>
                             </li>
                             */}
-                            <li className={styles.headerNavLeftMargin}>
-                                <a href="/" target={"_blank"} title="Octime - Leader en GTA">
-                                    <img src={github} alt="Timoo Logo" aria-label="Link to Octime" width="20px" height="20px" className={styles.githubLogo} />
-                                </a>
-                            </li>
+                           
                         </ul>
                     </nav>
                     <h4 className={styles.headerRightText}>Ton assistant Octime</h4>
