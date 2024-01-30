@@ -23,13 +23,14 @@ const Layout = () => {
                                     Chat
                                 </NavLink>
                             </li>
-                            <li className={styles.headerNavLeftMargin}>
+                            {/* <li className={styles.headerNavLeftMargin}>
                                 <NavLink to="/qa" className={({ isActive }) => (isActive ? styles.headerNavPageLinkActive : styles.headerNavPageLink)}>
                                     Ask a question
                                 </NavLink>
                             </li>
+                            */}
                             <li className={styles.headerNavLeftMargin}>
-                                <a href="www.octime.com" target={"_blank"} title="Octime - Leader en GTA">
+                                <a href="/" target={"_blank"} title="Octime - Leader en GTA">
                                     <img src={github} alt="Timoo Logo" aria-label="Link to Octime" width="20px" height="20px" className={styles.githubLogo} />
                                 </a>
                             </li>

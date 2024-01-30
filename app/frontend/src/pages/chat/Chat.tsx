@@ -269,7 +269,7 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <SparkleFilled fontSize={"120px"} primaryFill={"rgba(115, 118, 225, 1)"} aria-hidden="true" aria-label="Chat logo" />
+                            <img src="../../assets/Timoo.svg" alt="Timoo Logo" aria-label="Link to Octime" width="120px" height="120px" />
                             <h1 className={styles.chatEmptyStateTitle}>Parlons Octime</h1>
                             <h2 className={styles.chatEmptyStateSubtitle}>Posez moi une question ou essayez un exemple</h2>
                             <ExampleList onExampleClicked={onExampleClicked} useGPT4V={useGPT4V} />
