@@ -14,12 +14,11 @@ const Layout = () => {
             <header className={styles.header} role={"banner"}>
                 <div className={styles.headerContainer}>
                     <Link to="/" className={styles.headerTitleContainer}>
-                        <h3 className={styles.headerTitle}>Timoo BETA</h3>
+                        <h3 className={styles.headerTitle}>💖 Timoo BETA Version Cristel 💖</h3>
                     </Link>
                     <nav>
                         <ul className={styles.headerNavList}>
-                           
-                        <li className={styles.headerNavLeftMargin}>
+                            <li className={styles.headerNavLeftMargin}>
                                 <a href="/" target={"_blank"} title="Octime - Leader en GTA">
                                     <img src={github} alt="Timoo Logo" aria-label="Link to Octime" width="20px" height="20px" className={styles.githubLogo} />
                                 </a>
@@ -35,7 +34,6 @@ const Layout = () => {
                                 </NavLink>
                             </li>
                             */}
-                           
                         </ul>
                     </nav>
                     <h4 className={styles.headerRightText}>Ton assistant Octime</h4>
