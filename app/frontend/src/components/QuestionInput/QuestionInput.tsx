@@ -75,6 +75,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, init
                     <Button size="large" icon={<Send28Filled primaryFill="rgba(0, 80, 140, 1)" />} disabled={sendQuestionDisabled} onClick={sendQuestion} />
                 </Tooltip>
             </div>
+
         </Stack>
     );
 };

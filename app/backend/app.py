@@ -82,7 +82,6 @@ async def favicon():
 async def assets(path):
     return await send_from_directory(Path(__file__).resolve().parent / "static" / "assets", path)
 
-
 @bp.route("/content/<path>")
 @authenticated_path
 async def content_file(path: str):

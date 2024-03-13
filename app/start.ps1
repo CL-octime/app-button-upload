@@ -73,3 +73,15 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host "Failed to start backend"
     exit $LASTEXITCODE
 }
+
+Write-Host ""
+Write-Host "Starting frontend development server"
+Write-Host ""
+Set-Location ../frontend
+Start-Process -FilePath "npm" -ArgumentList "run", "dev" -Wait -NoNewWindow
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to start frontend development server"
+    exit $LASTEXITCODE
+}
+

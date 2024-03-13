@@ -16,5 +16,7 @@ export const ClearChatButton = ({ className, disabled, onClick }: Props) => {
                 {"Clear chat"}
             </Button>
         </div>
+        
     );
+
 };

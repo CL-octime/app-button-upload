@@ -133,12 +133,6 @@ resource webapp 'Microsoft.Web/sites@2020-06-01' = {
   }
 }
 
-
-
-
-
-
-
 // Organize resources in a resource group
 /*resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: !empty(resourceGroupName) ? resourceGroupName : '${abbrs.resourcesResourceGroups}${environmentName}'

@@ -5,6 +5,8 @@ import readNDJSONStream from "ndjson-readablestream";
 import github from "../../assets/Timoo.svg";
 import styles from "./Chat.module.css";
 
+
+
 import {
     chatApi,
     configApi,
@@ -15,6 +17,7 @@ import {
     ResponseMessage,
     VectorFieldOptions,
     GPT4VInput
+    
 } from "../../api";
 import { Answer, AnswerError, AnswerLoading } from "../../components/Answer";
 import { QuestionInput } from "../../components/QuestionInput";
@@ -28,6 +31,8 @@ import { VectorSettings } from "../../components/VectorSettings";
 import { useMsal } from "@azure/msal-react";
 import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
 import { GPT4VSettings } from "../../components/GPT4VSettings";
+
+
 
 const Chat = () => {
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
@@ -76,6 +81,32 @@ const Chat = () => {
         });
     };
 
+
+    //test bouton
+  // useState pour gérer le nom de fichier sélectionné
+        const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+            if (event.target.files) {
+            const file = event.target.files[0];
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data_save => {
+                console.log('Fichier uploadé avec succès:', data_save);
+            })
+            .catch(error => {
+                console.error('Erreur lors de l\'upload du fichier:', error);
+            });
+            }
+                };
+    
+
+
     const handleAsyncRequest = async (question: string, answers: [string, ChatAppResponse][], setAnswers: Function, responseBody: ReadableStream<any>) => {
         let answer: string = "";
         let askResponse: ChatAppResponse = {} as ChatAppResponse;
@@ -117,6 +148,7 @@ const Chat = () => {
             choices: [{ ...askResponse.choices[0], message: { content: answer, role: askResponse.choices[0].message.role } }]
         };
         return fullResponse;
+
     };
 
     const client = useLogin ? useMsal().instance : undefined;
@@ -261,14 +293,18 @@ const Chat = () => {
 
     return (
         <div className={styles.container}>
+            
             <div className={styles.commandsContainer}>
                 <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
                 <SettingsButton className={styles.commandButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
             </div>
-            <div className={styles.chatRoot}>
-                <div className={styles.chatContainer}>
+            
+        <div className={styles.chatRoot}>
+        <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
+
+                            
                             <img src={github} alt="Timoo Logo" aria-label="Link to Octime" width="120px" height="120px" />
                             <h1 className={styles.chatEmptyStateTitle}>Parlons Octime</h1>
                             <h2 className={styles.chatEmptyStateSubtitle}>Posez moi une question ou essayez un exemple</h2>
@@ -333,16 +369,31 @@ const Chat = () => {
                             <div ref={chatMessageStreamEnd} />
                         </div>
                     )}
+                        
 
-                    <div className={styles.chatInput}>
+{/* Bouton upload... */}               
+{/*{ Autres éléments si nécessaire */}
+                    <div className={`${styles.chatInput} ${styles.chatInputWrapper}`}>
                         <QuestionInput
                             clearOnSend
                             placeholder="Posez moi votre question sur Octime?"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question)}
                         />
+                        <input
+                                type="file"
+                                onChange={handleFileSelect}
+                                id="fileInput"
+                                className={styles.fileInput} // Appliquez les styles à partir de Chat.module.css
+                        />
+                        {/* Le label sert ici de bouton pour ouvrir le dialogue de fichier */}
+                        <label htmlFor="fileInput" className={styles.myCustomButton} >Download</label>
+                        {/* Ici vous pourriez ajouter d'autres éléments de votre interface de chat */}
                     </div>
-                </div>
+{/*{ Autres éléments si nécessaire */}
+
+
+
 
                 {answers.length > 0 && activeAnalysisPanelTab && (
                     <AnalysisPanel
@@ -453,7 +504,9 @@ const Chat = () => {
                 </Panel>
             </div>
         </div>
-    );
+    </div>
+    
+    )
 };
 
 export default Chat;
